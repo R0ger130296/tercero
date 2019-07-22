@@ -1,0 +1,67 @@
+$blanco:      rgb(253, 253, 253);
+$lila:      rgb(171, 237, 229);
+$azulOscuro:  #101068;
+$azul:        #0076A3;
+$verde:       #77ddc3;
+$rojo:        #fe2d28;
+$morado:      #6D73C2;
+$negro:       #000000;
+
+
+$color-principal: $blanco;
+
+$color-titulos: $negro;
+
+$fuente-titulos: 'Times New Roman', serif;
+$fuente-principal: 'Open Sans', sans-serif;
+
+$fondo-navegacion: $azul;
+
+$color-borde-noticia: $azul;
+$color-header-noticia: lighten($negro,10);
+$color-texto-noticia:$azul;
+
+$fondo-boton: $morado;
+$texto-boton: $lila;
+
+
+$desktop: 1024px;
+
+
+//grid
+$numero-columnas: 12;
+
+
+
+$deep_blue: #e41695;
+$r_deep_blue: 0;
+$g_deep_blue: 22;
+$b_deep_blue: 86;
+
+$light_blue: rgb(147, 145, 185);
+$r_light_blue: 25;
+$g_light_blue: 117;
+$b_light_blue: 255;
+
+$cover_picture: './assets/uno.png';
+$alpha_cover: 0.6;
+
+$black: #333333;
+$gris: #EAEAEA;
+$pure_white: #FFF;
+$almost_white: #FAFAFA;
+
+// OPACIDAD DE LAS LETRAS - INICIO
+$light: 100%;
+$regular: 300;
+$semi_bold: 400;
+$bold: 700;
+$ultra_bold: 900;
+
+$buttons: true !default;
+$buttonscolors:(
+    primario: yellow,
+    secundario: blue,
+    alerta:red,
+    oranges:orange
+);

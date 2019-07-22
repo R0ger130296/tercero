@@ -1,0 +1,78 @@
+@mixin text_body {
+    font-family: cursive;
+    font-size: 1px;
+    color: $pure_white;
+    font-weight: $light;
+}
+@mixin bg_covertint ($r-from, $g-from, $b-from, $r-to, $g-to, $b-to, $alpha, $imgurl, $background-top:"center", $background-left:"center", $background-attachment:"fixed") {
+	background: -webkit-linear-gradient(rgba($r-from, $g-from, $b-from, $alpha), rgba($r-to, $g-to, $b-to, $alpha)), url($imgurl) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment);
+	background:    -moz-linear-gradient(rgba($r-from, $g-from, $b-from, $alpha), rgba($r-to, $g-to, $b-to, $alpha)), url($imgurl) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment); 
+	background:      -o-linear-gradient(rgba($r-from, $g-from, $b-from, $alpha), rgba($r-to, $g-to, $b-to, $alpha)), url($imgurl) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment); 
+	background:         linear-gradient(rgba($r-from, $g-from, $b-from, $alpha), rgba($r-to, $g-to, $b-to, $alpha)), url($imgurl) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;  
+}
+@mixin desktop {
+	@media only screen and (min-width: #{$desktop}) {
+		@content;
+	}
+  }
+
+  @mixin clearfix {
+	&:after {
+	  content:"";
+	  clear: both;
+	}
+  }
+  
+  @mixin border-radius($border) {
+	border-radius: $border;
+  }  
+
+  @mixin gridImagenes($cantidad, $margin) {//para definir cantidad de imagenes y adecuarles en el espacio
+    width: ((100% - (($cantidad - 1) * $margin))/$cantidad);
+    &:nth-child(n) {
+      margin-right: $margin;
+      margin-bottom: $margin;
+    }
+    &:nth-child(#{$cantidad}n + 1) {
+        margin-right:0;
+        margin-bottom: 0;
+    }
+}
+
+@mixin clearfix {
+	&:after {
+	  content:"";
+	  clear: both;
+	}
+  }
+  
+  @mixin border-box {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+  }
+  
+
+  @mixin button ($colors...){
+	@if $buttons {
+		display: inline-block;
+		margin : 1em;
+		color: map-get($buttonscolors,nth($colors,1));
+		a{
+			text-decoration: none;
+		}
+		@if length($colors)>1{
+			@for $i from 2 through length($colors){
+				&.#{nth($colors,$i)}{
+					color:map-get($buttonscolors,nth($colors,$i));
+				}
+			}
+		}
+	}@else{
+		display: none;
+	}
+}

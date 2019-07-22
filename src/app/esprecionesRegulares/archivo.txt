@@ -1,0 +1,15 @@
+(?:x)	Coincide con 'x' pero no recuerda la coincidencia. Los paréntesis son llamados paréntesis no capturadores, y permiten definir subexpresiones para manipular con los operadores de las expresiones regulares.Para mayor información, mira Usando paréntesis mas abajo en este artículo.
+x(?=y)	
+Coincide con 'x' sólo si 'x' es seguida por 'y'. Esto se denomina previsión (lookahead, mirar adelante).
+
+Por ejemplo, /Jack(?=Sprat)/ coincide con 'Jack' solo si es seguido por 'Sprat'. /Jack(?=Sprat|Frost)/ conicide con 'Jack' solo si es seguido por 'Sprat' o 'Frost'. Sin embargo, ni 'Sprat' ni 'Frost' serán parte del resultado.
+
+x(?!y)	
+Coincide con 'x' solo si 'x' no es seguida por 'y'. Es una previsión negativa.
+
+Por ejemplo, /\d+(?!\.)/ coincide con numeros solo si no vienen seguidos por un punto decimal. La expresion regular /\d+(?!\.)/.exec("3.141") coincide con '141' pero no con '3.141'.
+
+x|y	
+Coincide con 'x' o 'y' (si no hay coincidencias para 'x').
+
+Por ejemplo, /green|red/ coincide con 'green' en "green apple" y 'red' en "red apple."

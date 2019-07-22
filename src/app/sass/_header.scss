@@ -1,0 +1,19 @@
+header{
+  div.menu {
+  background-color: rgb(240, 250, 246)  ;
+}
+  ul{
+    font-size: 1.3rem;
+    color:rgb(251, 251, 251);
+    text-align: center;
+  display: inline;
+  
+    &:hover{
+      color:black;
+    }
+  }
+img {
+    max-height:10%;
+    min-height:20%;
+}
+}
